@@ -1,0 +1,73 @@
+<!--Student Name: Helen Pham
+    Student ID: 21133245
+    This page includes welcome session and book session in single page and admin which link to another page. 
+    This page has the book button to add booking to the system, and the refresh button to refresh page before add a new booking.
+    And a div booking-information with empty, the code will be generated dynamically when booking is confirmed by the server-->
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CabsOnline</title>
+    <script src="ajax.js"></script>
+    <script src="booking.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section id="header">
+    <div class="header container">
+        <div class="nav-bar">
+            <div class="brand">
+                <a href="#welcome">
+                    <h1>Cabs Online</h1>
+                </a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#book">Book</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="welcome">
+    <div class="welcome container">
+    </div>
+</section>
+<session id="book">
+    <h1 class="session-title">Book</h1>
+    <div class="add-booking">
+        <form class="booking-form">
+            Customer Name
+            <input type="text" id="cname" name="cname" required /><br>
+            Phone Number
+            <input type="text" id="phone" name="phone" minlength="10" maxlength="12" required  /><br>
+            Unit Number
+            <input type="text" id="unumber" name="unumber"><br>
+            Street Number
+            <input type="text" id="snumber" name="snumber" required/><br>
+            Street Name
+            <input type="text" id="stname" name="stname" required/><br>
+            Suburb
+            <input type="text" id="sbname" name="sbname"><br>
+            Destination Suburb
+            <input type="text" id="dsbname" name="dsbname"><br>
+            Pick - Up Dater
+            <input type="date" name="date" id="date" min="" value="" required/><br>
+            Pick - Up Time
+            <input type="time" name="time" id="time" min="" value="" onchange="checkValid(this.value)" required/><br>
+            <br>
+        </form>
+        <button class="book" onclick="addBooking()">Book</button>
+        <br>
+        <button class="refresh" onclick="window.location.reload();">Refresh Page</button>
+    </div>
+    <div class="center booking-confirmation">
+    </div>
+</session>
+</body>
+</html>
+
+

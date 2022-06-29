@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand h1 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Rowdies', cursive;
+
+}
+input[type="text"]{
+    width: 60%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.7rem;
+}
+input[type="submit"] {
+    width: 30%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    background-color: coral;
+
+}
+input[type="reset"] {
+    width: 30%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    background-color: coral;
+
+}
+input:focus {
+    background-color: antiquewhite;
+}
+
+input[type="date"]{
+    width: 60%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.7rem;
+}
+
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header {
+    min-height: 5vh;
+    background-color: rgba(31, 30, 30, 0.6);
+}
+
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: column;
+    transition: .3s ease left;
+}
+#header .nav-list ul.active{
+    left: 0%;
+}
+
+
+#header .nav-list ul a {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    padding: 30px;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    font-size: 15rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 0.3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a{
+    color: saddlebrown;
+}
+
+#welcome {
+    background-image: url("images/welcome1.jpg");
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    resize: both;
+    position: relative;
+    z-index: 1;
+}
+
+#welcome::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: saddlebrown;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+#welcome .welcome {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#welcome h1 {
+    font-family: 'Rowdies', cursive;
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal 0.5s ease forwards;
+    font-weight: 900;
+    animation-delay: 1s;
+
+}
+
+#welcome h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#welcome h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#welcome h1:nth-child(3) {
+    animation: text_reveal_name 0.5s ease forwards;
+    animation-delay: 3s;
+
+}
+
+#welcome h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: wheat;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1s;
+}
+
+#welcome h1:nth-child(1) span {
+    animation-delay: 0.5s;
+}
+
+#welcome h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+#welcome h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+#add-status .store {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+    background-image: url("images/content.jpg");
+    background-size: 2000px 900px;
+}
+
+
+#add-status .post-box{
+    text-align: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.session-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: saddlebrown;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+#add-status .filter {
+    border-style: solid;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 200;
+    letter-spacing: .05rem;
+    max-width: 1000px;
+    margin: inherit;
+    padding: 20px;
+}
+#add-status .content {
+    text-align: left;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 200;
+    letter-spacing: .05rem;
+    max-width: 1000px;
+    margin: inherit;
+    padding: 20px;
+}
+
+#status_query {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#status_query td, #status_query th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#status_query tr:nth-child(even){background-color: #f2f2f2;}
+
+#status_query tr:hover {background-color: #ddd;}
+
+#status_query th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: chocolate;
+    color: white;
+}
+
+#contact .contact {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+    background-image: url("images/content.jpg");
+    background-size: 2000px 900px;
+}
+
+#contact .contact-items {
+    width: 400px;
+}
+
+#contact .contact-item {
+    color: saddlebrown;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px 0 #0000002c;
+    transition: 0.3s ease box-shadow;
+}
+
+#contact .contact-item:hover {
+    box-shadow: 0px 0px 5px 0 #0000002c;
+}
+
+#contact .icon {
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#contact .contact-info h2 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: coral;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: saddlebrown;
+        font-weight: 900 !important;
+    }
+}
+
+@media only screen and ( min-width: 800px) {
+    #welcome h1 {
+        font-size: 6.5rem;
+    }
+    #contact .contact {
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        min-width: 20vh;
+    }
+
+    #contact .contact-items {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    #contact .contact-item {
+        width: 30%;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    #contact .contact-item .icon {
+        height: 80px;
+        width: 80px;
+    }
+
+    #contact .contact-item .icon img {
+        object-fit: contain;
+    }
+
+    #contact .contact-item .contact-info {
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a{
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: white;
+        font-family: 'Rowdies', cursive;
+    }
+
+    #header .nav-list ul a::after{
+        display: none;
+    }
+}
+
+
+

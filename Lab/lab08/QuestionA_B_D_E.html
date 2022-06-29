@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question A B D E</title>
+    <script type="text/javascript" src="Email.js"></script>
+    <script type="text/javascript" src="domPrac.js"></script>
+</head>
+<body>
+<h1>Question A</h1>
+<h2>Subtotal of array from 1 to 10</h2>
+<script>
+        document.write("Starting Loop" + "<br />");
+        let total = 0;
+        for(let i = 1; i <= 10; i++ ){
+            total += i
+            document.write("Current subtotal : " + total);
+            document.write("<br />");
+        }
+        document.write("Loop End" + "<br />");
+
+        function changeBackgroundColor(color){
+            document.body.style.background = color;
+        }
+</script>
+<h1>Question B</h1>
+<h2>Change background Color</h2>
+<p>Enter color to change background of the page</p>
+<input id="color" type="text">
+<p>Click button to change the page background</p>
+<button onclick="changeBackgroundColor(document.getElementById('color').value)">Change</button>
+<br><br>
+<button onclick="changeBackgroundColor('lightpink')">Change another color</button>
+<br>
+<button onclick="changeBackgroundColor('yellow')">Change another color</button>
+<br><br>
+<h1>Question D</h1>
+<p>Enter a sentence</p>
+<input id="input" type="text">
+<p>Click the button to print input from user</p>
+<button onclick="printInput(document.getElementById('input').value)">Print</button>
+<p id="demo"></p>
+<h1>Question E</h1>
+<p>Click a button to get 3 email records from window alerts</p>
+<button id="test" onclick="test()">Button</button>
+</body>
+</html>

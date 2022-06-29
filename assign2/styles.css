@@ -1,0 +1,389 @@
+/*
+Name: Helen Pham
+Student ID: 21133245
+css for design web page
+*/
+
+.center {
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#book .booking-confirmation {
+    width: 350px;
+    height: 330px;
+    padding: 30px 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    top: -200px;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 300ms ease-in-out, top 1000ms ease-in-out, transform 1000ms ease-in-out;
+}
+
+#book .booking-confirmation.active{
+    opacity: 1;
+    top: 150%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+}
+
+
+#book .booking-confirmation .icon {
+    margin: 5px 0px;
+    border: 3px solid #34f234;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+#book .booking-confirmation .close-btn {
+    margin-top: 15px;
+}
+
+#book .booking-confirmation .close-btn button{
+    background: cadetblue;
+    border: 2px solid cadetblue;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+#book .booking-confirmation .close-btn button:hover{
+    background: darkcyan ;
+}
+
+#book .booking-confirmation > div{
+    position: relative;
+    top: 10px;
+    opacity: 0;
+}
+
+#book .booking-confirmation.active >div{
+    top: 0px;
+    opacity: 1;
+}
+
+#book .booking-confirmation.active .icon{
+    transition: all 300ms ease-in-out 250ms;
+}
+
+#book .booking-confirmation.active .message{
+    transition: all 300ms ease-in-out 300ms;
+}
+#book .booking-confirmation.active .table{
+    transition: all 300ms ease-in-out 350ms;
+}
+#book .booking-confirmation.active .close-btn{
+    transition: all 300ms ease-in-out 400ms;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand h1 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Rowdies', cursive;
+}
+input[type="text"]{
+    width: 30%;
+    height: 2vh;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 1.7rem;
+}
+
+input:focus {
+    background-color: antiquewhite;
+}
+
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header {
+    min-height: 5vh;
+    background-color: rgba(31, 30, 30, 0.6);
+}
+
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: column;
+    /*transition: .3s ease left;*/
+}
+
+#header .nav-list ul a {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    padding: 30px;
+    color: white;
+    display: block;
+}
+
+#header .nav-list ul li:hover a{
+    color: darkcyan;
+}
+@media only screen and (min-width: 1200px) {
+
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a{
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+    }
+
+    #header .nav-list ul a::after{
+        display: none;
+    }
+}
+
+#welcome {
+    background-image: url("images/Car.gif");
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    resize: both;
+    position: relative;
+    z-index: 1;
+}
+
+#book{
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+    background-color: lightgray;
+    background-size: cover;
+}
+
+#book .add-booking{
+    text-align: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 30px 0;
+    margin: inherit;
+    font-size: 2rem;
+}
+
+
+
+.session-title {
+    margin-top: 80px;
+    font-size: 4rem;
+    font-weight: 900;
+    color: darkcyan;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+.book {
+    background: cadetblue;
+    border: 2px solid cadetblue;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 26px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.reset{
+    background: cadetblue;
+    border: 2px solid cadetblue;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 26px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.searching-booking{
+    text-align: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 30px 0;
+    margin: inherit;
+    font-size: 2rem;
+}
+
+.sbutton{
+    background: cadetblue;
+    border: 2px solid cadetblue;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 26px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.refresh{
+    background: coral;
+    border: 2px solid coral;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 26px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.assign{
+    background: gold;
+    border: 2px solid gold;
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 20px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.booking-assign{
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    top: -200px;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 300ms ease-in-out, top 1000ms ease-in-out, transform 1000ms ease-in-out;
+}
+
+.booking-assign.active{
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+}
+
+
+.booking-assign .icon {
+    margin: 5px 0px;
+    border: 3px solid #34f234;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.booking-assign .close-btn {
+    margin-top: 15px;
+}
+
+.booking-assign .close-btn button{
+    background: cadetblue;
+    border: 2px solid cadetblue;
+    padding: 7px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.booking-assign .close-btn button:hover{
+    background: darkcyan ;
+}
+
+.booking-assign > div{
+    position: relative;
+    top: 10px;
+    opacity: 0;
+}
+
+.booking-assign.active >div{
+    top: 0px;
+    opacity: 1;
+}
+
+.booking-assign.active .icon{
+    transition: all 300ms ease-in-out 250ms;
+}
+
+.booking-assign.active .message{
+    transition: all 300ms ease-in-out 300ms;
+}
+.booking-assign.active .table{
+    transition: all 300ms ease-in-out 350ms;
+}
+.booking-assign.active .close-btn{
+    transition: all 300ms ease-in-out 400ms;
+}
+
+

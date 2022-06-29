@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A Simple Ajax Example</title>
+    <script type="text/javascript" src="simpleajax.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
+    <style>
+        body{
+            text-align: center;
+            background-color: navajowhite;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<H1>Fetching data with Ajax &nbsp;</H1>
+<form>
+    <label>User Name: <input type="text" name="namefield" class="name"> </label>
+    <label><br>Password: <input type="text" name="pwdfield" class="password"> <br><br> </label>
+    <input name="submit" type="button" onclick="getEmail($('.name').val(), $('.password').val())" value="Get Email">
+</form>
+<div id="targetDiv">
+    <p class="email-result"></p>
+</div>
+</body>
+</html>

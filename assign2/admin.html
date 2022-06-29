@@ -1,0 +1,78 @@
+<!--Student Name: Helen Pham
+    Student ID: 21133245
+    This file includes Ui for search required bookings. When booking are retrieved, they will be rendered inside the table and this will be handled by the logic code of admin.js file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CabsOnline</title>
+	<style>
+	.results{
+		border-collapse: collapse;
+		margin: 0 auto;
+		font-size: 0.9em;
+		font-family: sans-serif;
+		min-width: 400px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	}
+	.results thead tr {
+	    background-color: #009879;
+	    color: #ffffff;
+	    text-align: left;
+	}
+	.results th{
+		background-color: cadetblue;
+	}
+	.results th,
+	.results td {
+	    padding: 12px 15px;
+	}
+	.results tbody tr {
+	    border-bottom: 1px solid #dddddd;
+	}
+
+	.results tbody tr:nth-of-type(even) {
+	    background-color: #f3f3f3;
+	}
+
+	.results tbody tr:last-of-type {
+	    border-bottom: 2px solid #009879;
+	}
+	</style>
+    <script src="ajax.js"></script>
+    <script src="admin.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class=searching-booking>
+    <h1 class="session-title">Bookings can be assigned</h1>
+    <p>Booking Number</p>
+    <input type="text" name="bsearch" class="bsearch"> <br>
+    <input type="button" class="sbutton" name="sbutton" value="Search"onclick="getNewBookings($('.bsearch').val())">
+	<button class="refresh" onclick="window.location.href='booking.html'">Return Main Page</button>
+    <br>
+    <div style="display: none" class="content">
+        <div class="content">
+            <table class="results">
+                <tr>
+                    <th>Booking reference number</th>
+                    <th>Customer name</th>
+                    <th>Phone</th>
+                    <th>Pickup suburb</th>
+                    <th>Destination suburb</th>
+                    <th>Pickup date</th>
+                    <th>Pickup time</th>
+                    <th>Status</th>
+                    <th>Assign Booking</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="notFound">
+	<div>
+    <div class="center booking-assign">
+    </div>
+	
+</div>
+</body>
+</html>

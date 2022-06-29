@@ -1,0 +1,7 @@
+create table lab07 (
+	user_name varchar(50) not null unique,
+	password varchar(50) not null,
+	email varchar(50) not null,
+	constraint lab07_pk
+		primary key (user_name)
+);

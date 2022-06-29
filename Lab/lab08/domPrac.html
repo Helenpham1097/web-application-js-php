@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>Adding New Elements</title>
+    <style>
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        .new {
+            background-color: #ffcccc;
+        }
+    </style>
+    <script type="text/javascript" src="domPrac.js"></script>
+</head>
+
+<body onload="makeTable()">
+<h1>Subject Table</h1><br/>
+
+<table id="tbl"></table>
+<br/>
+<form>
+    <input type="button" value=" append a new row " onclick="appendRow()"/><br/>
+</form>
+
+</body>
+</html>
